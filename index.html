@@ -189,6 +189,9 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
         }
 
         .btn-primary {
@@ -262,8 +265,8 @@
             font-size: 0.9rem;
         }
 
-        /* Products Section */
-        .products {
+        /* Categories Section */
+        .categories {
             padding: 6rem 0;
             background: var(--light-bg);
         }
@@ -297,42 +300,43 @@
             font-size: 1.1rem;
         }
 
-        .products-grid {
+        .categories-grid {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
             padding: 0 2rem;
         }
 
-        .product-card {
+        .category-card {
             background: white;
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
             transition: all 0.4s;
             position: relative;
+            cursor: pointer;
         }
 
-        .product-card:hover {
+        .category-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
 
-        .product-image {
-            height: 220px;
+        .category-image {
+            height: 200px;
             background: linear-gradient(135deg, var(--light-green), var(--primary-green));
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
+            font-size: 5rem;
             color: white;
             position: relative;
             overflow: hidden;
         }
 
-        .product-image::before {
+        .category-image::before {
             content: '';
             position: absolute;
             top: -50%;
@@ -344,11 +348,11 @@
             opacity: 0.3;
         }
 
-        .product-content {
+        .category-content {
             padding: 2rem;
         }
 
-        .product-category {
+        .category-badge {
             display: inline-block;
             background: rgba(26, 95, 42, 0.1);
             color: var(--primary-green);
@@ -359,24 +363,25 @@
             margin-bottom: 1rem;
         }
 
-        .product-title {
-            font-size: 1.4rem;
+        .category-title {
+            font-size: 1.5rem;
             margin-bottom: 0.5rem;
             color: var(--text-dark);
+            font-weight: 700;
         }
 
-        .product-description {
+        .category-description {
             color: var(--text-light);
             font-size: 0.95rem;
             margin-bottom: 1.5rem;
         }
 
-        .product-features {
+        .category-features {
             list-style: none;
             margin-bottom: 1.5rem;
         }
 
-        .product-features li {
+        .category-features li {
             padding: 0.3rem 0;
             color: var(--text-light);
             font-size: 0.9rem;
@@ -385,14 +390,14 @@
             gap: 0.5rem;
         }
 
-        .product-features li i {
+        .category-features li i {
             color: var(--accent-gold);
         }
 
-        .product-btn {
+        .category-btn {
             width: 100%;
             padding: 1rem;
-            background: var(--primary-green);
+            background: linear-gradient(135deg, var(--primary-green), var(--light-green));
             color: white;
             border: none;
             border-radius: 10px;
@@ -403,11 +408,57 @@
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
+            font-size: 1rem;
         }
 
-        .product-btn:hover {
-            background: var(--light-green);
+        .category-btn:hover {
             transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(26, 95, 42, 0.3);
+        }
+
+        /* Quick Contact Section */
+        .quick-contact {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+            color: white;
+            text-align: center;
+        }
+
+        .quick-contact h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .quick-contact p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .quick-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary-green);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
         /* About Section */
@@ -805,22 +856,26 @@
             .nav-links {
                 display: none;
             }
-            
+
             .hero h1 {
                 font-size: 2.5rem;
             }
-            
+
             .about-container,
             .contact-container {
                 grid-template-columns: 1fr;
             }
-            
+
             .about-image {
                 order: -1;
             }
-            
+
             .footer-container {
                 grid-template-columns: 1fr 1fr;
+            }
+
+            .categories-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -828,19 +883,19 @@
             .hero h1 {
                 font-size: 2rem;
             }
-            
+
             .section-title {
                 font-size: 2rem;
             }
-            
+
             .about-features {
                 grid-template-columns: 1fr;
             }
-            
+
             .footer-container {
                 grid-template-columns: 1fr;
             }
-            
+
             .contact-form {
                 padding: 2rem 1.5rem;
             }
@@ -858,6 +913,7 @@
             transform: translateY(0);
         }
     </style>
+<base target="_blank">
 </head>
 <body>
     <!-- Navigation -->
@@ -869,7 +925,7 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#products">Products</a></li>
+                <li><a href="#categories">Categories</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#process">Process</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -892,8 +948,8 @@
                 Giving pre-loved items a second life while protecting our planet.
             </p>
             <div class="hero-buttons">
-                <a href="#products" class="btn btn-primary">
-                    <i class="fas fa-box-open"></i> View Products
+                <a href="#categories" class="btn btn-primary">
+                    <i class="fas fa-box-open"></i> Browse Categories
                 </a>
                 <a href="https://wa.me/971552214798" class="btn btn-secondary" target="_blank">
                     <i class="fab fa-whatsapp"></i> WhatsApp Us
@@ -936,155 +992,175 @@
         </div>
     </section>
 
-    <!-- Products Section -->
-    <section class="products" id="products">
+    <!-- Categories Section -->
+    <section class="categories" id="categories">
         <div class="section-header">
-            <span class="section-tag">Our Catalog</span>
-            <h2 class="section-title">Premium Used Products</h2>
+            <span class="section-tag">Our Products</span>
+            <h2 class="section-title">Browse By Category</h2>
             <p class="section-subtitle">
-                Carefully sorted, graded, and packed for international markets. 
-                Quality you can trust, prices you will love.
+                Click any category to inquire via WhatsApp. We will send you detailed catalog 
+                with photos and pricing within minutes.
             </p>
         </div>
-        
-        <div class="products-grid">
-            <!-- Product 1: Used Clothing -->
-            <div class="product-card">
-                <div class="product-image">
+
+        <div class="categories-grid">
+            <!-- Category 1: Used Clothing -->
+            <div class="category-card" onclick="openCategoryWhatsApp('Used Clothing')">
+                <div class="category-image">
                     <i class="fas fa-tshirt"></i>
                 </div>
-                <div class="product-content">
-                    <span class="product-category">Best Seller</span>
-                    <h3 class="product-title">Used Clothing</h3>
-                    <p class="product-description">
+                <div class="category-content">
+                    <span class="category-badge">Best Seller</span>
+                    <h3 class="category-title">Used Clothing</h3>
+                    <p class="category-description">
                         Mixed summer and winter clothing, carefully sorted by grade. 
                         Includes shirts, pants, dresses, and traditional wear.
                     </p>
-                    <ul class="product-features">
+                    <ul class="category-features">
                         <li><i class="fas fa-check"></i> Grade A/B/C available</li>
                         <li><i class="fas fa-check"></i> 45kg bales</li>
                         <li><i class="fas fa-check"></i> Mixed gender & age</li>
                     </ul>
-                    <button class="product-btn" onclick="openWhatsApp('Used Clothing')">
-                        <i class="fab fa-whatsapp"></i> Inquiry Now
+                    <button class="category-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
                     </button>
                 </div>
             </div>
 
-            <!-- Product 2: Used Shoes -->
-            <div class="product-card">
-                <div class="product-image">
+            <!-- Category 2: Used Shoes -->
+            <div class="category-card" onclick="openCategoryWhatsApp('Used Shoes')">
+                <div class="category-image">
                     <i class="fas fa-shoe-prints"></i>
                 </div>
-                <div class="product-content">
-                    <span class="product-category">High Demand</span>
-                    <h3 class="product-title">Used Shoes</h3>
-                    <p class="product-description">
+                <div class="category-content">
+                    <span class="category-badge">High Demand</span>
+                    <h3 class="category-title">Used Shoes</h3>
+                    <p class="category-description">
                         Quality second-hand footwear including sports shoes, formal shoes, 
                         sandals, and boots for all ages.
                     </p>
-                    <ul class="product-features">
+                    <ul class="category-features">
                         <li><i class="fas fa-check"></i> Paired and tied</li>
                         <li><i class="fas fa-check"></i> Cleaned & sanitized</li>
                         <li><i class="fas fa-check"></i> 25kg sacks</li>
                     </ul>
-                    <button class="product-btn" onclick="openWhatsApp('Used Shoes')">
-                        <i class="fab fa-whatsapp"></i> Inquiry Now
+                    <button class="category-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
                     </button>
                 </div>
             </div>
 
-            <!-- Product 3: Used Toys -->
-            <div class="product-card">
-                <div class="product-image">
+            <!-- Category 3: Used Toys -->
+            <div class="category-card" onclick="openCategoryWhatsApp('Used Toys')">
+                <div class="category-image">
                     <i class="fas fa-robot"></i>
                 </div>
-                <div class="product-content">
-                    <span class="product-category">Popular</span>
-                    <h3 class="product-title">Used Toys</h3>
-                    <p class="product-description">
+                <div class="category-content">
+                    <span class="category-badge">Popular</span>
+                    <h3 class="category-title">Used Toys</h3>
+                    <p class="category-description">
                         Mixed toys including soft toys, electronic toys, educational toys, 
                         and plastic toys in working condition.
                     </p>
-                    <ul class="product-features">
+                    <ul class="category-features">
                         <li><i class="fas fa-check"></i> Safety checked</li>
                         <li><i class="fas fa-check"></i> Mixed categories</li>
                         <li><i class="fas fa-check"></i> 10kg cartons</li>
                     </ul>
-                    <button class="product-btn" onclick="openWhatsApp('Used Toys')">
-                        <i class="fab fa-whatsapp"></i> Inquiry Now
+                    <button class="category-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
                     </button>
                 </div>
             </div>
 
-            <!-- Product 4: Handbags & Belts -->
-            <div class="product-card">
-                <div class="product-image">
+            <!-- Category 4: Handbags & Belts -->
+            <div class="category-card" onclick="openCategoryWhatsApp('Handbags and Belts')">
+                <div class="category-image">
                     <i class="fas fa-shopping-bag"></i>
                 </div>
-                <div class="product-content">
-                    <span class="product-category">Premium</span>
-                    <h3 class="product-title">Handbags & Belts</h3>
-                    <p class="product-description">
+                <div class="category-content">
+                    <span class="category-badge">Premium</span>
+                    <h3 class="category-title">Handbags & Belts</h3>
+                    <p class="category-description">
                         Fashion accessories including ladies handbags, purses, wallets, 
                         and leather belts in good condition.
                     </p>
-                    <ul class="product-features">
+                    <ul class="category-features">
                         <li><i class="fas fa-check"></i> Genuine & synthetic leather</li>
                         <li><i class="fas fa-check"></i> Mixed brands</li>
                         <li><i class="fas fa-check"></i> Carefully packed</li>
                     </ul>
-                    <button class="product-btn" onclick="openWhatsApp('Handbags and Belts')">
-                        <i class="fab fa-whatsapp"></i> Inquiry Now
+                    <button class="category-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
                     </button>
                 </div>
             </div>
 
-            <!-- Product 5: Crockery -->
-            <div class="product-card">
-                <div class="product-image">
+            <!-- Category 5: Used Crockery -->
+            <div class="category-card" onclick="openCategoryWhatsApp('Used Crockery')">
+                <div class="category-image">
                     <i class="fas fa-utensils"></i>
                 </div>
-                <div class="product-content">
-                    <span class="product-category">Kitchen</span>
-                    <h3 class="product-title">Used Crockery</h3>
-                    <p class="product-description">
+                <div class="category-content">
+                    <span class="category-badge">Kitchen</span>
+                    <h3 class="category-title">Used Crockery</h3>
+                    <p class="category-description">
                         Kitchenware including plates, cups, glasses, and cutlery sets. 
                         Perfect for household and restaurant use.
                     </p>
-                    <ul class="product-features">
+                    <ul class="category-features">
                         <li><i class="fas fa-check"></i> Ceramic & glass</li>
                         <li><i class="fas fa-check"></i> Complete sets</li>
                         <li><i class="fas fa-check"></i> Bubble wrapped</li>
                     </ul>
-                    <button class="product-btn" onclick="openWhatsApp('Used Crockery')">
-                        <i class="fab fa-whatsapp"></i> Inquiry Now
+                    <button class="category-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
                     </button>
                 </div>
             </div>
 
-            <!-- Product 6: Vintage Items -->
-            <div class="product-card">
-                <div class="product-image">
+            <!-- Category 6: Vintage Items -->
+            <div class="category-card" onclick="openCategoryWhatsApp('Vintage Items')">
+                <div class="category-image">
                     <i class="fas fa-gem"></i>
                 </div>
-                <div class="product-content">
-                    <span class="product-category">Rare Collection</span>
-                    <h3 class="product-title">Vintage & Jewelry</h3>
-                    <p class="product-description">
+                <div class="category-content">
+                    <span class="category-badge">Rare Collection</span>
+                    <h3 class="category-title">Vintage & Jewelry</h3>
+                    <p class="category-description">
                         Special collection of vintage items, antique jewelry, and unique 
                         collectible pieces for selective buyers.
                     </p>
-                    <ul class="product-features">
+                    <ul class="category-features">
                         <li><i class="fas fa-check"></i> Handpicked items</li>
                         <li><i class="fas fa-check"></i> Authentic vintage</li>
                         <li><i class="fas fa-check"></i> Limited stock</li>
                     </ul>
-                    <button class="product-btn" onclick="openWhatsApp('Vintage Items')">
-                        <i class="fab fa-whatsapp"></i> Inquiry Now
+                    <button class="category-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
                     </button>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Quick Contact Section -->
+    <section class="quick-contact">
+        <div class="section-header" style="color: white; margin-bottom: 2rem;">
+            <h2 style="color: white; font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1rem;">
+                Need Custom Order?
+            </h2>
+            <p style="color: rgba(255,255,255,0.9); font-size: 1.2rem;">
+                Have specific requirements? Contact us directly for bulk orders and custom containers.
+            </p>
+        </div>
+        <div class="quick-buttons">
+            <a href="https://wa.me/971552214798" class="btn-white" target="_blank">
+                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+            </a>
+            <a href="mailto:imp.zsglobal@gmail.com" class="btn-white">
+                <i class="fas fa-envelope"></i> Send Email
+            </a>
         </div>
     </section>
 
@@ -1104,7 +1180,7 @@
                     and goods to communities worldwide. Every item we export is carefully inspected, 
                     graded, and packed to ensure maximum value for our clients.
                 </p>
-                
+
                 <div class="about-features">
                     <div class="about-feature">
                         <i class="fas fa-certificate"></i>
@@ -1136,7 +1212,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="about-image">
                 <div class="about-image-main">
                     <i class="fas fa-leaf"></i>
@@ -1160,7 +1236,7 @@
                     at every step of the process.
                 </p>
             </div>
-            
+
             <div class="process-grid">
                 <div class="process-card">
                     <div class="process-number">1</div>
@@ -1170,7 +1246,7 @@
                     <h3>Sourcing</h3>
                     <p>We collect quality used items from reliable suppliers across UAE and Europe.</p>
                 </div>
-                
+
                 <div class="process-card">
                     <div class="process-number">2</div>
                     <div class="process-icon">
@@ -1179,7 +1255,7 @@
                     <h3>Sorting</h3>
                     <p>Expert team sorts items by category, condition, and market requirements.</p>
                 </div>
-                
+
                 <div class="process-card">
                     <div class="process-number">3</div>
                     <div class="process-icon">
@@ -1188,7 +1264,7 @@
                     <h3>Cleaning</h3>
                     <p>All items are professionally cleaned, sanitized, and prepared for export.</p>
                 </div>
-                
+
                 <div class="process-card">
                     <div class="process-number">4</div>
                     <div class="process-icon">
@@ -1197,7 +1273,7 @@
                     <h3>Packing</h3>
                     <p>Careful packing in bales, sacks, or cartons based on product type.</p>
                 </div>
-                
+
                 <div class="process-card">
                     <div class="process-number">5</div>
                     <div class="process-icon">
@@ -1206,7 +1282,7 @@
                     <h3>Documentation</h3>
                     <p>Complete export paperwork, customs clearance, and compliance.</p>
                 </div>
-                
+
                 <div class="process-card">
                     <div class="process-number">6</div>
                     <div class="process-icon">
@@ -1229,7 +1305,7 @@
                     Ready to import quality used goods? Contact us today for pricing, 
                     availability, and shipping details. We respond within 24 hours.
                 </p>
-                
+
                 <div class="contact-details">
                     <div class="contact-item">
                         <div class="contact-icon">
@@ -1240,7 +1316,7 @@
                             <a href="https://wa.me/971552214798" target="_blank">+971 55 221 4798</a>
                         </div>
                     </div>
-                    
+
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
@@ -1250,7 +1326,7 @@
                             <a href="mailto:imp.zsglobal@gmail.com">imp.zsglobal@gmail.com</a>
                         </div>
                     </div>
-                    
+
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
@@ -1260,7 +1336,7 @@
                             <p>Saif Zone, Sharjah, UAE</p>
                         </div>
                     </div>
-                    
+
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-building"></i>
@@ -1272,28 +1348,28 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="contact-form">
                 <form id="inquiryForm">
                     <div class="form-group">
                         <label>Your Name</label>
                         <input type="text" placeholder="Enter your name" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label>Email Address</label>
                         <input type="email" placeholder="Enter your email" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label>WhatsApp Number</label>
                         <input type="tel" placeholder="With country code">
                     </div>
-                    
+
                     <div class="form-group">
                         <label>Product Interest</label>
                         <select required>
-                            <option value="">Select Product</option>
+                            <option value="">Select Category</option>
                             <option value="clothing">Used Clothing</option>
                             <option value="shoes">Used Shoes</option>
                             <option value="toys">Used Toys</option>
@@ -1303,17 +1379,17 @@
                             <option value="mixed">Mixed Container</option>
                         </select>
                     </div>
-                    
+
                     <div class="form-group">
                         <label>Destination Country</label>
                         <input type="text" placeholder="Where to ship?">
                     </div>
-                    
+
                     <div class="form-group">
                         <label>Message</label>
                         <textarea placeholder="Tell us your requirements..."></textarea>
                     </div>
-                    
+
                     <button type="submit" class="submit-btn">
                         <i class="fas fa-paper-plane"></i> Send Inquiry
                     </button>
@@ -1339,17 +1415,17 @@
                     <a href="https://wa.me/971552214798"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
-            
+
             <div class="footer-column">
-                <h4>Products</h4>
+                <h4>Categories</h4>
                 <ul>
-                    <li><a href="#">Used Clothing</a></li>
-                    <li><a href="#">Used Shoes</a></li>
-                    <li><a href="#">Used Toys</a></li>
-                    <li><a href="#">Handbags</a></li>
+                    <li><a href="#" onclick="openCategoryWhatsApp('Used Clothing')">Used Clothing</a></li>
+                    <li><a href="#" onclick="openCategoryWhatsApp('Used Shoes')">Used Shoes</a></li>
+                    <li><a href="#" onclick="openCategoryWhatsApp('Used Toys')">Used Toys</a></li>
+                    <li><a href="#" onclick="openCategoryWhatsApp('Handbags and Belts')">Handbags</a></li>
                 </ul>
             </div>
-            
+
             <div class="footer-column">
                 <h4>Company</h4>
                 <ul>
@@ -1359,7 +1435,7 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
-            
+
             <div class="footer-column">
                 <h4>Support</h4>
                 <ul>
@@ -1370,13 +1446,31 @@
                 </ul>
             </div>
         </div>
-        
+
         <div class="footer-bottom">
             <p>&copy; 2024 ZS GLOBAL FZE. All rights reserved. | Saif Zone, Sharjah, UAE</p>
         </div>
     </footer>
 
     <script>
+        // Category WhatsApp Function
+        function openCategoryWhatsApp(category) {
+            const phone = '971552214798';
+            const message = `Hello ZS GLOBAL FZE,
+
+I am interested in your ${category}.
+
+Please send me:
+- Current stock photos
+- Price list
+- Packing details
+- Minimum order quantity
+
+Thank you!`;
+            const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1391,34 +1485,23 @@
             });
         });
 
-        // WhatsApp function
-        function openWhatsApp(product) {
-            const phone = '971552214798';
-            const message = `Hello ZS GLOBAL FZE, I am interested in your ${product}. Please send me details and pricing.`;
-            const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-            window.open(url, '_blank');
-        }
-
         // Form submission
         document.getElementById('inquiryForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
+
             const name = this.querySelector('input[type="text"]').value;
             const product = this.querySelector('select').value;
-            
-            // Create WhatsApp message
-            const message = `Hello ZS GLOBAL FZE,\\n\\nMy Name: ${name}\\nInterested in: ${product}\\n\\nPlease contact me with details.`;
+
+            const message = `Hello ZS GLOBAL FZE,
+
+My Name: ${name}
+Interested in: ${product}
+
+Please contact me with details.`;
             const url = `https://wa.me/971552214798?text=${encodeURIComponent(message)}`;
-            
-            // Open WhatsApp
+
             window.open(url, '_blank');
-            
-            // Reset form
             this.reset();
-            
-            // Show alert
             alert('Thank you! Redirecting you to WhatsApp to complete your inquiry.');
         });
 
@@ -1446,7 +1529,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.product-card, .stat-card, .process-card, .about-feature').forEach(el => {
+        document.querySelectorAll('.category-card, .stat-card, .process-card, .about-feature').forEach(el => {
             el.classList.add('fade-in');
             observer.observe(el);
         });
